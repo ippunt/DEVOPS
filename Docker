@@ -1,0 +1,12 @@
+Just different examples to look at real quick while working on things:
+https://docs.docker.com/storage/volumes/
+
+
+1. BUild from file and mount persistent volumnes
+https://docs.docker.com/storage/volumes/
+wget https://raw.githubusercontent.com/ntop/docker-ntop/master/Dockerfile.agent
+docker build -t agent -f Dockerfile.agent .
+docker run -it --network=host -v /etc/nprobe-agent.license:/etc/nprobe-agent.license:ro \
+  -v /lib/modules:/lib/modules:ro -v /usr/src:/usr/src:ro -v /etc/localtime:/etc/localtime:ro \
+  -v /sys/kernel/debug:/sys/kernel/debug -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /snap/bin/microk8s.ctr:/snap/bin/microk8s.ctr --privileged agent
