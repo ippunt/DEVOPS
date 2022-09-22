@@ -1,9 +1,13 @@
 Just different examples to look at real quick while working on things:
 https://docs.docker.com/storage/volumes/
+https://hub.docker.com/r/bitnami/apache
 1. Build from dockerfile and Persistent volumnes. 
-
+2. Persistent volumne test with nginx
+-v <host_directory>:<container_directory>
 
 1. BUild from file and mount persistent volumnes
+-v <host_directory>:<container_directory>
+
 https://docs.docker.com/storage/volumes/
 wget https://raw.githubusercontent.com/ntop/docker-ntop/master/Dockerfile.agent
 docker build -t agent -f Dockerfile.agent .
@@ -11,3 +15,10 @@ docker run -it --network=host -v /etc/nprobe-agent.license:/etc/nprobe-agent.lic
   -v /lib/modules:/lib/modules:ro -v /usr/src:/usr/src:ro -v /etc/localtime:/etc/localtime:ro \
   -v /sys/kernel/debug:/sys/kernel/debug -v /var/run/docker.sock:/var/run/docker.sock \
   -v /snap/bin/microk8s.ctr:/snap/bin/microk8s.ctr --privileged agent
+
+2.
+-v <host_directory>:<container_directory>
+
+docker pull nginx:latest;
+docker run -d -p 80:80 nginx; This will present the welcome page. 
+docker run -d -p 80:80 -v ~/docker-share/html:usr/share/nginx/html;
