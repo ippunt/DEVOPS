@@ -1,5 +1,6 @@
 Just different examples to look at real quick while working on things:
 https://docs.docker.com/storage/volumes/
+1. Build from dockerfile and Persistent volumnes. 
 
 
 1. BUild from file and mount persistent volumnes
