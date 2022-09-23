@@ -1,0 +1,4 @@
+1. Port forwarding to conatiner machine and which bridge to put it on
+-p <host port>:<Container port>
+1. sudo docker run it -p 80:800 -p 102:10201 -p 502:5020
+    
