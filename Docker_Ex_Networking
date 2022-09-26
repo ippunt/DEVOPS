@@ -1,8 +1,11 @@
 1. Port forwarding to conatiner machine and which bridge to put it on
 -p <host port>:<Container port>
-2. Using bridges, 
+2. IP with port forwarding
+3. Creating Bridger and utilization.
 
 1. sudo docker run it -p 80:800 -p 102:10201 -p 502:5020
 
-2. --network=bridge Bridge1
+2. -p 192.168.1.100:8080:80
+
+3.
     
