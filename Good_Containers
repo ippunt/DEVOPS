@@ -2,3 +2,4 @@ docker pull httpd
 docker pull conpot
 impacket in docker  https://yojimbosecurity.ninja/impacket-and-docker/ shows how to do with 2.7
 https://pypi.org/project/impacket/  shows how to do with 3. Make sure right version of 3 and Impacket are supported. 
+https://blog.ropnop.com/docker-for-pentesters/ better description of switches
