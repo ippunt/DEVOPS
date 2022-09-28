@@ -1,6 +1,7 @@
 https://dockerlabs.collabnix.com/docker/cheatsheet/
 https://www.docker.com/wp-content/uploads/2022/03/docker-cheat-sheet.pdf
 
+docker images; shows you images you have built, or docker pull; 
 docker run httpd; Runs the container
 docker ps; List running containers
 docker run -p 80:80 httpd;  run an image with certain port
