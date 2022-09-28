@@ -4,6 +4,7 @@ By default every container can talk to each other! Must build networking for iso
 -p <host port>:<Container port>
 2. IP with port forwarding. IP has to be on host. 
 3. Creating Bridger and utilization.
+4. View stuff
 
 1. sudo docker run it -p 80:800 -p 102:10201 -p 502:5020
 
@@ -14,3 +15,7 @@ This IP needs to be a host IP.
 3.
 docker network create net1
 docker run --net net1 --name tulipnginx -d nginx;
+
+4. 
+View Bridges: docker network ls
+View Container IP: docker inspect mynginx | grep IPAddress
