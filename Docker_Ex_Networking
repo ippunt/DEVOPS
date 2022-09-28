@@ -1,5 +1,5 @@
 https://www.tutorialworks.com/container-networking/
-
+By default every container can talk to each other! Must build networking for isolation. 
 1. Port forwarding to conatiner machine and which bridge to put it on
 -p <host port>:<Container port>
 2. IP with port forwarding. IP has to be on host. 
