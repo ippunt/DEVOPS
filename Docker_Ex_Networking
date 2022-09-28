@@ -12,4 +12,5 @@ vim /etc/netplan/01-netcfg.yaml;  under addresses: - 192.168.1.10/24; - 192.168.
 This IP needs to be a host IP. 
 
 3.
-    
+docker network create net1
+docker run --net net1 --name tulipnginx -d nginx;
