@@ -1,3 +1,5 @@
+https://www.tutorialworks.com/container-networking/
+
 1. Port forwarding to conatiner machine and which bridge to put it on
 -p <host port>:<Container port>
 2. IP with port forwarding. IP has to be on host. 
