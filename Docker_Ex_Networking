@@ -1,12 +1,13 @@
 1. Port forwarding to conatiner machine and which bridge to put it on
 -p <host port>:<Container port>
-2. IP with port forwarding
+2. IP with port forwarding. IP has to be on host. 
 3. Creating Bridger and utilization.
 
 1. sudo docker run it -p 80:800 -p 102:10201 -p 502:5020
 
 2. -p 192.168.1.100:8080:80;    You will only use this if your host is being forwaded traffic for another host or has multiple IPs
 vim /etc/netplan/01-netcfg.yaml;  under addresses: - 192.168.1.10/24; - 192.168.1.20/24; sudo netplan apply;
+This IP needs to be a host IP. 
 
 3.
     
