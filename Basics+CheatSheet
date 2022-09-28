@@ -9,7 +9,8 @@ docker run -p 80:80 httpd;  run an image with certain port
 docker run -P httpd; map all ports
 docker run -d httpd; start container in the background
 docker run --hostname <hostname> httpd; assign hostname
-docker run -name webtest -p 80:80 httpd;   Give it a name to easily manage; docker stop webtest; docker kill webtest;
+docker run --name webtest -p 80:80 httpd;   Give it a name to easily manage; docker stop webtest; docker kill webtest;
 docker start b478934392; start a stopped container by short hand id
+docker run -it --rm impacket; --rm allows run image by name
 docker run -it --entrypoint bash httpd;
 docker exec -it container_id /bin/bash;  Get into bash of currently running container
