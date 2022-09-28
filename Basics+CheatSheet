@@ -7,4 +7,5 @@ docker run -p 80:80 httpd;  run an image with certain port
 docker run -P httpd; map all ports
 docker run -d httpd; start container in the background
 docker run --hostname <hostname> httpd; assign hostname
+docker run -name webtest -p 80:80 httpd;   Give it a name to easily manage; docker stop webtest; docker kill webtest;
 docker run -it
