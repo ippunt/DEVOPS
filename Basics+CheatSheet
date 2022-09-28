@@ -1,0 +1,10 @@
+https://dockerlabs.collabnix.com/docker/cheatsheet/
+https://www.docker.com/wp-content/uploads/2022/03/docker-cheat-sheet.pdf
+
+docker run httpd; Runs the container
+docker ps; List running containers
+docker run -p 80:80 httpd;  run an image with certain port
+docker run -P httpd; map all ports
+docker run -d httpd; start container in the background
+docker run --hostname <hostname> httpd; assign hostname
+docker run -it
