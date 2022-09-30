@@ -12,5 +12,7 @@ docker run --hostname <hostname> httpd; assign hostname
 docker run --name webtest -p 80:80 httpd;   Give it a name to easily manage; docker stop webtest; docker kill webtest;
 docker start b478934392; start a stopped container by short hand id
 docker run -it --rm impacket; --rm remove once done. Short lived container do not have to delete
+CTRL -P CTRL -Q ; exit without stopping. 
 docker run -it --entrypoint bash httpd;
 docker exec -it container_id /bin/bash;  Get into bash of currently running container
+docker exec -ti redis redsi-cli; enter canarytoken server
