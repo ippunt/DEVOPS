@@ -1,0 +1,29 @@
+https://medium.com/the-agile-crafter/docker-image-optimization-from-1-16gb-to-22-4mb-53fdb4c53311
+
+
+cat demo-docker
+FROM node:10
+
+WORKDIR /app
+COPY app /app
+RUN npm install -g webserver.local
+RUN npm install && npm run build
+
+EXPOSE 3000
+CMD webserver.local -d ./build
+EOF
+
+docker images demo-docker;    shows us the size if 1.16G
+
+cat demo-docker2
+FROM node:10-alpine
+
+WORKDIR /app
+COPY app /app
+RUN npm install -g webserver.local
+RUN npm install && npm run build
+
+EXPOSE 3000
+CMD webserver.local -d ./build
+EOF
+docker images demo-docker2;  336MB is the size
