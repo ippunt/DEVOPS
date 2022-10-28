@@ -1,0 +1,29 @@
+Two files:
+program.py - is your flask web app
+example-app - is your docker file
+docker run -it -p 5000:5000 example-app; 
+
+cat example-app
+FROM python:3.8
+ENV yeller holla
+COPY . /app
+WORKDIR /app
+RUN pip install -r requirements.txt
+EXPOSE 5000
+
+ENTRYPOINT ["python3"]
+CMD ["program.py]
+EOF
+
+cat program.py
+from flask import Flask
+import os
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+  yeller = os.environ['yeller']
+  return f'Hello, World! {yeller}'
+if __name__ == "__main__":
+  app.run(debug=true, host='0.0.0.0')
