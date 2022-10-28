@@ -1,0 +1,28 @@
+Two files:
+nginx.config
+nginxlbd
+
+
+cat nging.config
+events {}
+http {
+  upstream myapp {
+    server 1.1.1.1:5000:
+    server 1.1.1.2:5000:
+  }
+  server {
+    listen 8080:
+    server_name localhost:
+   location / {
+     proxy_pass http://myapp:
+     proxy_set_header Host $host:
+    }
+  }
+ }
+ EOF
+ 
+ cat nginxlbd
+ FROM nginx
+ COPY nginx.config /etc/nginx/nginx.conf
+ EXPOSE 8080   # This is just metadata for the implementor
+ CMD ["nginx", "-g", "daemon off;"]
