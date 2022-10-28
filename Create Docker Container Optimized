@@ -14,6 +14,7 @@ CMD webserver.local -d ./build
 EOF
 
 docker images demo-docker;    shows us the size if 1.16G
+____________________________________________________________________________________________
 
 cat demo-docker2
 FROM node:10-alpine
@@ -27,6 +28,7 @@ EXPOSE 3000
 CMD webserver.local -d ./build
 EOF
 docker images demo-docker2;  336MB is the size
+____________________________________________________________________________________________
 
 
 cat demo-docker3
@@ -44,6 +46,7 @@ EXPOSE 3000
 CMD webserver.local -d ./build
 EOF
 docker images demo-docker3;  91.5 MB
+____________________________________________________________________________________________
 
 Running server side Javascript from the node container is not the most efficient way about going about this
 cat demo-docker4 
