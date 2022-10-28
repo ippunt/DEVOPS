@@ -1,4 +1,4 @@
-Two files:
+three files:
 program.py - is your flask web app
 example-app - is your docker file
 docker run -it -p 5000:5000 example-app; 
@@ -27,3 +27,8 @@ def home():
   return f'Hello, World! {yeller}'
 if __name__ == "__main__":
   app.run(debug=true, host='0.0.0.0')
+EOF
+
+cat requirements.txt
+flask==1.1.1
+mysqlclient==1.4.5
