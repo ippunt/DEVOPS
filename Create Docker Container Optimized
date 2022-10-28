@@ -27,3 +27,35 @@ EXPOSE 3000
 CMD webserver.local -d ./build
 EOF
 docker images demo-docker2;  336MB is the size
+
+
+cat demo-docker3
+FROM node:10-alpine AS build
+WORKDIR /app
+COPY app /app
+RUN npm install && npm run build
+
+
+FROM node:10-alpine
+WORKDIR /app
+RUN npm install -g webserver.local
+COPY --from=build /app/build ./build
+EXPOSE 3000
+CMD webserver.local -d ./build
+EOF
+docker images demo-docker3;  91.5 MB
+
+Running server side Javascript from the node container is not the most efficient way about going about this
+cat demo-docker4 
+FROM node:10-alpine AS build
+WORKDIR /app
+COPY app /app
+RUN npm install && npm run build
+
+
+FROM nginx:stable-alpine
+COPY --from=build /app/build /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+EOF
+docker images demo-docker4;  This container is 22.4 MB... LightWeight
