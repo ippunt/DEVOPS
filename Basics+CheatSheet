@@ -16,3 +16,4 @@ CTRL -P CTRL -Q ; exit without stopping.
 docker run -it --entrypoint bash httpd;
 docker exec -it container_id /bin/bash;  Get into bash of currently running container
 docker exec -ti redis redis-cli; enter canarytoken server
+ Press Ctrl-P, followed by Ctrl-Q, to detach from your connection.
